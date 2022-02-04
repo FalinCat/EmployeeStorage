@@ -51,7 +51,8 @@ namespace EmployeeStorage
             Console.WriteLine("asd");
         }
 
-        private static List<Project> GetAllProjectInProgress() { 
+        private static List<Project> GetAllProjectInProgress()
+        {
             return projectService.GetMany(x => x.Status == ProjectStatus.InProgress).ToList();
         }
 
