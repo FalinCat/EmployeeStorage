@@ -1,11 +1,11 @@
 ﻿namespace DAL.Models
 {
-    public class Skill
+    public class Country
     {
         public Guid Id { get; set; }
 
         public string Name { get; set; }
 
-        public virtual IList<Employee> Employee { get; set; }
+        public virtual ICollection<City> Cities { get; set; }
     }
 }

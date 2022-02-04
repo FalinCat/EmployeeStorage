@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DAL.Models
+﻿namespace DAL.Models
 {
     public class City
     {
@@ -14,6 +8,10 @@ namespace DAL.Models
 
         public string PostalCode { get; set; }
 
-        public ICollection<Company> Companies { get; set; }
+        public virtual ICollection<Company> Companies { get; set; }
+
+        public Guid CountryId { get; set; }
+
+        public virtual Country Country { get; set; }
     }
 }
