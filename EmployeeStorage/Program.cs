@@ -38,7 +38,6 @@ namespace EmployeeStorage
             roleService = new RoleService(new EmploeeContext(options));
             skillService = new SkillService(new EmploeeContext(options));
 
-
             //PopulateDBWithTestData();
 
             var employees = GetAllEmployees();
@@ -47,8 +46,6 @@ namespace EmployeeStorage
             //DeleteSkill(fSharpSkill);
             var skilledEmployeers = GetAllEmployeesWithSkill(fSharpSkill);
             var activeProjects = GetAllProjectInProgress();
-
-            Console.WriteLine("asd");
         }
 
         private static List<Project> GetAllProjectInProgress()

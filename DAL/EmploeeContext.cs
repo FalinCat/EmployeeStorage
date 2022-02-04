@@ -12,13 +12,6 @@ namespace DAL
             //Database.Migrate();
         }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    optionsBuilder.UseSqlite("Data Source=D:\\emploee.db");
-        //    optionsBuilder.UseLazyLoadingProxies();
-        //}
-
-
         public DbSet<Employee> Employees { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Company> Companies { get; set; }
@@ -61,7 +54,6 @@ namespace DAL
                 .HasMany(x => x.Cities)
                 .WithOne(x => x.Country)
                 .HasForeignKey(x => x.CountryId);
-
         }
 
 
