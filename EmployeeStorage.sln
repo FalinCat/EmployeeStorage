@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeStorage", "Employee
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{1F13565B-5054-4864-B5F8-48FCA4A910F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{8118BBF8-B399-4B0C-B652-BBF5B4255B4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BLL", "BLL\BLL.csproj", "{8118BBF8-B399-4B0C-B652-BBF5B4255B4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeerStorageAPI", "EmployeerStorageAPI\EmployeerStorageAPI.csproj", "{96D77526-2E45-4A16-9BA7-5FE72F59DFEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{8118BBF8-B399-4B0C-B652-BBF5B4255B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8118BBF8-B399-4B0C-B652-BBF5B4255B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8118BBF8-B399-4B0C-B652-BBF5B4255B4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96D77526-2E45-4A16-9BA7-5FE72F59DFEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96D77526-2E45-4A16-9BA7-5FE72F59DFEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96D77526-2E45-4A16-9BA7-5FE72F59DFEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96D77526-2E45-4A16-9BA7-5FE72F59DFEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
