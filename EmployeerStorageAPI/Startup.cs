@@ -3,6 +3,7 @@ using BLL;
 using BLL.Services.Classes;
 using BLL.Services.Interfaces;
 using DAL;
+using EmployeerStorageAPI.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
@@ -49,6 +50,8 @@ namespace EmployeerStorageAPI
 
             services.AddTransient<ISkillService, SkillService>();
             services.AddTransient<IUserService, UserService>();
+            
+
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(options =>
             {
@@ -82,6 +85,7 @@ namespace EmployeerStorageAPI
 
             app.UseRouting();
 
+            app.UseMiddleware<AuthMiddleware>();
             app.UseAuthentication();
             app.UseAuthorization();
 
