@@ -23,26 +23,6 @@ namespace EmployeerStorageAPI.Controllers
             _config = configuration;
         }
 
-        [HttpPost("registerAdmin")]
-        public async Task<ActionResult<User>> RegisterAdmin(UserDto request)
-        {
-            CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
-            var user = new User()
-            {
-                Username = request.Username,
-                PasswordHash = passwordHash,
-                PasswordSalt = passwordSalt,
-                Role = UserRole.Administrator
-            };
-
-            _userService.Add(user);
-            _userService.SaveChanges();
-
-            return Ok(user);
-        }
-
-        [HttpPost("registeruser")]
-        public async Task<ActionResult<User>> RegisterUser(UserDto request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
             var user = new User()
