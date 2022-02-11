@@ -12,12 +12,14 @@ namespace DAL
             //Database.Migrate();
         }
 
-        public DbSet<Employee> Employees { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Company> Companies { get; set; }
-        public DbSet<Skill> Skills { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Employee> Employees { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Role> Roles { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<User> Users { get; set; } // Auth
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

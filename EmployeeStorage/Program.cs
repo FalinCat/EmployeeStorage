@@ -38,7 +38,7 @@ namespace EmployeeStorage
             roleService = new RoleService(new EmploeeContext(options));
             skillService = new SkillService(new EmploeeContext(options));
 
-            //PopulateDBWithTestData();
+            PopulateDBWithTestData();
 
             var employees = GetAllEmployees();
             var skillList = GetAllSkills();
