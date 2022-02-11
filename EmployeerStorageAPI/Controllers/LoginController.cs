@@ -75,6 +75,23 @@ namespace EmployeerStorageAPI.Controllers
             return Results.Json(response);
         }
 
+        [HttpGet("ban/{id}"), Authorize(Roles = "Administrator")]
+        public async Task<IActionResult> BlockUser(Guid id)
+        {
+            var user = _userService.Get(x => x.Id == id);
+            if (user == null) 
+                return NotFound();
+
+            if (_userService.BanUser(id))
+            {
+                return Ok();
+            }
+            else
+            {
+                return StatusCode(500);
+            }
+        }
+
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
