@@ -54,10 +54,12 @@ namespace EmployeerStorageAPI
             {
                 options.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
                 {
-                    Description = "Standart Authorization header using the Bearer scheme (\"bearer {token}\")",
-                    In = ParameterLocation.Header,
                     Name = "Authorization",
-                    Type = SecuritySchemeType.ApiKey
+                    Type = SecuritySchemeType.Http,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "JWT Authorization header using the Bearer scheme."
                 });
                 options.OperationFilter<SecurityRequirementsOperationFilter>();
             });
