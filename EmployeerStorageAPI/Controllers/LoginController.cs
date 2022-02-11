@@ -2,6 +2,7 @@
 using BLL.Services.Interfaces;
 using DAL.Enums;
 using DAL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -17,22 +18,25 @@ namespace EmployeerStorageAPI.Controllers
         private IUserService _userService;
         private IConfiguration _config;
 
+
         public LoginController(IUserService userService, IConfiguration configuration)
         {
             _userService = userService;
             _config = configuration;
         }
 
+        [HttpPost("registration")]
+        public async Task<ActionResult<User>> Registration(UserDto request)
         {
             CreatePasswordHash(request.Password, out byte[] passwordHash, out byte[] passwordSalt);
+            Enum.TryParse(typeof(UserRole), request.Role, out object? role);
             var user = new User()
             {
                 Username = request.Username,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
-                Role = UserRole.User
+                Role = role is not null ? (UserRole)role : UserRole.User
             };
-
             _userService.Add(user);
             _userService.SaveChanges();
 
