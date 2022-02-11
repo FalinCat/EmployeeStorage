@@ -80,8 +80,10 @@ namespace EmployeerStorageAPI.Controllers
         public async Task<IActionResult> BlockUser(Guid id)
         {
             var user = _userService.Get(x => x.Id == id);
-            if (user == null) 
+            if (user == null)
+            {
                 return NotFound();
+            }
 
             if (_userService.BanUser(id))
             {

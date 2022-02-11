@@ -1,18 +1,10 @@
 ﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using DAL;
-using DAL.Models;
-using BLL.Services.Classes;
-using BLL.Services.Interfaces;
 using AutoMapper;
 using BLL.DTO;
+using BLL.Services.Interfaces;
+using DAL.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeerStorageAPI.Controllers
 {

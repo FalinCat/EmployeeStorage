@@ -15,7 +15,8 @@ namespace EmployeerStorageAPI.Middleware
 
         public async Task InvokeAsync(HttpContext context, IUserService userService)
         {
-            if (!context.Request.Headers.Authorization.ToString().StartsWith("Bearer ")) {
+            if (!context.Request.Headers.Authorization.ToString().StartsWith("Bearer "))
+            {
                 await _next.Invoke(context);
                 return;
             }
@@ -25,7 +26,8 @@ namespace EmployeerStorageAPI.Middleware
             var jwtSecurityToken = handler.ReadJwtToken(token);
             var userName = jwtSecurityToken.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
 
-            if (userName == null) {
+            if (userName == null)
+            {
                 context.Response.StatusCode = 403;
                 await context.Response.WriteAsync("Token is invalid");
                 return;

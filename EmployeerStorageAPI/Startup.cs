@@ -51,7 +51,7 @@ namespace EmployeerStorageAPI
             services.AddTransient<ISkillService, SkillService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IProjectService, ProjectService>();
-            
+
 
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(options =>

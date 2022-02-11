@@ -67,6 +67,5 @@ namespace BLL.Services.Classes
             Dispose(true);
             GC.SuppressFinalize(this);
         }
-
     }
 }

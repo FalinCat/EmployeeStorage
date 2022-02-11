@@ -58,7 +58,7 @@ namespace EmployeerStorageAPI.Controllers
             {
                 newSkill = _mapper.Map<Skill>(skill);
             }
-            
+
             _skillService.Add(newSkill);
             _skillService.SaveChanges();
 
