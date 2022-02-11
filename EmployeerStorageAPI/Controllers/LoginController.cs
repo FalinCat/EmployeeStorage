@@ -43,13 +43,10 @@ namespace EmployeerStorageAPI.Controllers
         [HttpPost("login")]
         public async Task<IResult> Login([FromBody] UserDto request)
         {
-            var user = _userService.Get(x => x.Username == request.Username);
-            if (user == null)
-            {
-                return Results.Unauthorized(); // Status code 200, but in response json "statusCode": 401
-            }
-
-            if (!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+            var user = _userService.Get(x => x.Username == request.Username); // Perfomance?
+            if (user == null
+                || user.Role == UserRole.Ban
+                || !VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
             {
                 return Results.Unauthorized();
             }
