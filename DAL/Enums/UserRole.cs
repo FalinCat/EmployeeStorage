@@ -4,6 +4,7 @@
     {
         User,
         Administrator,
-        Moderator
+        Moderator,
+        Ban
     }
 }
